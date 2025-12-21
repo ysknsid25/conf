@@ -3,6 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { conferences, Conference } from "./data";
+import { AboutView } from "./About";
 
 // --- Icons & Assets ---
 import iconUrl from "leaflet/dist/images/marker-icon.png";
@@ -51,6 +52,22 @@ const IconList = ({ className }: { className?: string }) => (
         <line x1="3" y1="6" x2="3.01" y2="6"></line>
         <line x1="3" y1="12" x2="3.01" y2="12"></line>
         <line x1="3" y1="18" x2="3.01" y2="18"></line>
+    </svg>
+);
+
+const IconUser = ({ className }: { className?: string }) => (
+    <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        viewBox="0 0 24 24" 
+        fill="none" 
+        stroke="currentColor" 
+        strokeWidth="2" 
+        strokeLinecap="round" 
+        strokeLinejoin="round" 
+        className={className}
+    >
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+        <circle cx="12" cy="7" r="4"></circle>
     </svg>
 );
 
@@ -132,7 +149,6 @@ const IconProposal = ({ className }: { className?: string }) => (
         className={className}
     >
         <line x1="22" y1="2" x2="11" y2="13"></line>
-
         <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
     </svg>
 );
@@ -149,7 +165,6 @@ const IconJavaScript = ({ className }: { className?: string }) => (
         className={className}
     >
         <polyline points="20 17 14 12 20 7"></polyline>
-
         <line x1="4" y1="12" x2="14" y2="12"></line>
     </svg>
 );
@@ -166,7 +181,6 @@ const IconTypeScript = ({ className }: { className?: string }) => (
         className={className}
     >
         <polyline points="16 18 22 12 16 6"></polyline>
-
         <polyline points="8 6 2 12 8 18"></polyline>
     </svg>
 );
@@ -202,7 +216,7 @@ const typeColors: { [key: string]: string } = {
 };
 
 function App() {
-    const [mode, setMode] = useState<"map" | "history">("map");
+    const [mode, setMode] = useState<"map" | "history" | "about">("map");
 
     return (
         <div className="min-h-screen bg-gray-50 text-gray-900 font-sans">
@@ -238,11 +252,28 @@ function App() {
                         <IconList className="w-4 h-4" />
                         History
                     </button>
+                    <button
+                        onClick={() => setMode("about")}
+                        className={`flex items-center gap-2 px-3 py-1.5 rounded-md text-sm font-medium transition-all ${
+                            mode === "about"
+                                ? "bg-white text-gray-900 shadow-sm"
+                                : "text-gray-500 hover:text-gray-700"
+                        }`}
+                    >
+                        <IconUser className="w-4 h-4" />
+                        About
+                    </button>
                 </div>
             </header>
 
             <main className="h-[calc(100vh-64px)] w-full">
-                {mode === "map" ? <MapView /> : <HistoryView />}
+                {mode === "map" ? (
+                    <MapView />
+                ) : mode === "history" ? (
+                    <HistoryView />
+                ) : (
+                    <AboutView />
+                )}
             </main>
         </div>
     );
