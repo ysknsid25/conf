@@ -119,7 +119,7 @@ export const conferences: Conference[] = [
         slidesUrl:
             "https://speakerdeck.com/ysknsid25/java-dexue-bu-dai-shu-de-detaxing",
         isBest: false,
-        type: "Other",
+        type: "Kotlin",
     },
     {
         date: "2025-05-23",
@@ -183,7 +183,7 @@ export const conferences: Conference[] = [
         slidesUrl:
             "https://docs.google.com/presentation/d/1VrNm-OL5NhDmUlRvZIAL5Zpfhn_8PsFasCANEGCrZcE/edit?slide=id.p#slide=id.p",
         isBest: false,
-        type: "Other",
+        type: "SoftSkills",
     },
     {
         date: "2024-06-22",
@@ -211,7 +211,7 @@ export const conferences: Conference[] = [
         proposalUrl:
             "https://fortee.jp/phpconkagawa-2024/proposal/d9f74b93-9991-4932-afaf-ada75c330094",
         isBest: false,
-        type: "Other",
+        type: "SoftSkills",
     },
     {
         date: "2024-02-11",
@@ -237,7 +237,7 @@ export const conferences: Conference[] = [
         slidesUrl:
             "https://docs.google.com/presentation/d/1Vycv8CJg_XnX8aM3Xs04kB2JhYdFsIhZG57-iVOR4W4/edit?slide=id.p#slide=id.p",
         isBest: false,
-        type: "Other",
+        type: "SoftSkills",
     },
     {
         date: "2023-06-21",
@@ -249,6 +249,6 @@ export const conferences: Conference[] = [
         slidesUrl:
             "https://speakerdeck.com/toranoana/codezine-night-number-2-ruo-shou-enziniagayu-ruji-shu-henotiao-zhan-tokiyariazhan-lue-9a3918b0-a756-4e71-ac8c-0c2a7e29fb7e",
         isBest: false,
-        type: "Other",
+        type: "TypeScript",
     },
 ];

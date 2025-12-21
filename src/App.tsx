@@ -464,8 +464,36 @@ function HistoryView() {
         (a, b) => parseInt(b) - parseInt(a)
     );
 
+    const typeCounts = conferences.reduce((acc, conf) => {
+        acc[conf.type] = (acc[conf.type] || 0) + 1;
+        return acc;
+    }, {} as Record<string, number>);
+
     return (
         <div className="max-w-3xl mx-auto px-4 py-8 overflow-y-auto h-full pb-20">
+            <div className="mb-8 bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">
+                    Statistics ({conferences.length} Total)
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                    {Object.entries(typeCounts)
+                        .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+                        .map(([type, count]) => (
+                            <span
+                                key={type}
+                                className={`inline-flex items-center px-2.5 py-1 rounded text-xs font-medium border ${
+                                    typeColors[type] || typeColors["Other"]
+                                }`}
+                            >
+                                {type}
+                                <span className="ml-1.5 font-bold opacity-75">
+                                    {count}
+                                </span>
+                            </span>
+                        ))}
+                </div>
+            </div>
+
             <div className="flex flex-col gap-8">
                 {years.map((year) => (
                     <div key={year}>
