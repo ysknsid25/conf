@@ -77,15 +77,16 @@ If you need new categories (e.g., "Python", "Rust"), update the `ConferenceType`
 
 ### Update Profile Info
 
-To change the title and avatar icon in the header:
+To change the title, avatar icon, and GitHub link in the header:
 
 1.  Open `src/App.tsx`.
 2.  Search for the `<header>` section.
 3.  Replace the `src` attribute of the `<img>` tag with your own avatar URL.
 4.  Update the text "Kanon's Conference History" to your name.
+5.  Update the `href` attribute of the GitHub link to your own repository URL.
 
 ```tsx
-<h1 className="flex items-center text-xl font-bold tracking-tight text-gray-800">
+<h1 className="flex items-center text-xl font-bold tracking-tight text-gray-800 mr-4">
   <img 
     src="YOUR_AVATAR_URL_HERE" 
     alt="Your Name" 
@@ -93,6 +94,15 @@ To change the title and avatar icon in the header:
   />
   Your Name's Conference History
 </h1>
+<a
+    href="https://github.com/YOUR_USERNAME/YOUR_REPO"
+    target="_blank"
+    rel="noreferrer"
+    className="text-gray-500 hover:text-gray-700 transition-colors"
+    aria-label="GitHub Repository"
+>
+    <IconGithub className="w-6 h-6" />
+</a>
 ```
 
 ## Deployment

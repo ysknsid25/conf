@@ -56,14 +56,14 @@ const IconList = ({ className }: { className?: string }) => (
 );
 
 const IconUser = ({ className }: { className?: string }) => (
-    <svg 
-        xmlns="http://www.w3.org/2000/svg" 
-        viewBox="0 0 24 24" 
-        fill="none" 
-        stroke="currentColor" 
-        strokeWidth="2" 
-        strokeLinecap="round" 
-        strokeLinejoin="round" 
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         className={className}
     >
         <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
@@ -185,6 +185,21 @@ const IconTypeScript = ({ className }: { className?: string }) => (
     </svg>
 );
 
+const IconGithub = ({ className }: { className?: string }) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className={className}
+    >
+        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+    </svg>
+);
+
 // --- Utils ---
 
 const groupedConferences: { [key: string]: Conference[] } = {};
@@ -223,14 +238,20 @@ function App() {
     return (
         <div className="min-h-screen bg-gray-50 text-gray-900 font-sans">
             <header className="bg-white border-b border-gray-200 sticky top-0 z-50 px-4 py-3 shadow-sm flex justify-between items-center">
-                <h1 className="flex items-center text-xl font-bold tracking-tight text-gray-800">
-                    <img
-                        src="https://avatars.githubusercontent.com/u/44870505?v=4"
-                        alt="Kanon's avatar"
-                        className="w-8 h-8 rounded-full mr-2"
-                    />
-                    Kanon's Conference History
-                </h1>
+                <div className="flex items-center">
+                    <h1 className="flex items-center text-xl font-bold tracking-tight text-gray-800 mr-4">
+                        <a
+                            href="https://github.com/ysknsid25/conf"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="text-gray-500 hover:text-gray-700 transition-colors"
+                            aria-label="GitHub Repository"
+                        >
+                            <IconGithub className="w-8 h-8 mr-2" />
+                        </a>
+                        Kanon's Conference History
+                    </h1>
+                </div>
                 <div className="flex bg-gray-100 p-1 rounded-lg">
                     <button
                         onClick={() => setMode("map")}
@@ -499,7 +520,7 @@ function HistoryItem({ conf, idx }: { conf: Conference; idx: number }) {
 
                 <div className="flex items-center gap-1 text-sm text-gray-500 mb-3">
                     <IconLocation className="w-3.5 h-3.5" />
-                    <span>@{conf.venue}</span>
+                    <span>{conf.venue}</span>
                 </div>
 
                 <div className="grid sm:grid-cols-2 gap-x-4 gap-y-2 mb-4">
