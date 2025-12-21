@@ -190,6 +190,8 @@ const IconTypeScript = ({ className }: { className?: string }) => (
 const groupedConferences: { [key: string]: Conference[] } = {};
 
 conferences.forEach((conf) => {
+    if (!conf.coords) return; // Skip if no coordinates (e.g. Online)
+
     const key = `${conf.coords[0]},${conf.coords[1]}`;
 
     if (!groupedConferences[key]) {

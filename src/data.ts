@@ -3,7 +3,7 @@ export type ConferenceType = 'PHP' | 'Kotlin' | 'JavaScript' | 'TypeScript' | 'G
 export interface Conference {
   date: string;
   venue: string;
-  coords: [number, number]; // [lat, lng]
+  coords?: [number, number]; // [lat, lng] - Optional for online events
   name: string;
   url: string;
   theme: string;
@@ -71,5 +71,17 @@ export const conferences: Conference[] = [
     slidesUrl: 'https://speakerdeck.com/dummy/tskaigi2025',
     isBest: true,
     type: 'TypeScript',
+  },
+  // オンライン開催のテストデータ
+  {
+    date: '2025-05-20',
+    venue: 'Online',
+    // coords is omitted
+    name: 'Global Tech Online 2025',
+    url: 'https://globaltech.example.com/',
+    theme: 'Remote Work Best Practices',
+    slidesUrl: 'https://speakerdeck.com/dummy/globaltech2025',
+    isBest: false,
+    type: 'Other',
   }
 ];
