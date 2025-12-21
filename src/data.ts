@@ -157,7 +157,7 @@ export const conferences: Conference[] = [
             "https://speakerdeck.com/ysknsid25/tesutokodopin-zhi-wogao-merutamenimutation-testingraiburaristrykerwoshi-zhan-dao-ru-sitemita",
         proposalUrl: "https://kansai.tskaigi.org/talks/ysknsid25",
         isBest: true,
-        type: "JavaScript",
+        type: "TypeScript",
     },
     {
         date: "2024-10-05",
