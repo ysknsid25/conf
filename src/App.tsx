@@ -262,7 +262,7 @@ function App() {
                         }`}
                     >
                         <IconMap className="w-4 h-4" />
-                        Map
+                        <span className="hidden sm:inline">Map</span>
                     </button>
                     <button
                         onClick={() => setMode("history")}
@@ -273,7 +273,7 @@ function App() {
                         }`}
                     >
                         <IconList className="w-4 h-4" />
-                        History
+                        <span className="hidden sm:inline">History</span>
                     </button>
                     <button
                         onClick={() => setMode("about")}
@@ -284,7 +284,7 @@ function App() {
                         }`}
                     >
                         <IconUser className="w-4 h-4" />
-                        About
+                        <span className="hidden sm:inline">About</span>
                     </button>
                 </div>
             </header>
