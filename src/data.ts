@@ -18,6 +18,7 @@ export interface Conference {
     proposalUrl?: string; // Add Proposal URL
     isBest: boolean;
     type: ConferenceType;
+    expense: number;
 }
 
 export const conferences: Conference[] = [
@@ -56,6 +57,7 @@ export const conferences: Conference[] = [
         proposalUrl: "https://tskaigi.hatenablog.com/entry/2025/10/14/140147",
         isBest: false,
         type: "TypeScript",
+        expense: 19480,
     },
     {
         date: "2025-11-01",
@@ -69,6 +71,7 @@ export const conferences: Conference[] = [
             "https://fortee.jp/kotlin-fest-2025/proposal/e5c35932-b0ba-44f5-9da7-e0653e0c2655",
         isBest: false,
         type: "Kotlin",
+        expense: 28840,
     },
     {
         date: "2025-10-18",
@@ -82,6 +85,7 @@ export const conferences: Conference[] = [
             "https://fortee.jp/honoconf-2025/proposal/e03ef3a3-0f9f-4c1a-9b0c-e628f38b9f5c",
         isBest: true,
         type: "TypeScript",
+        expense: 29616,
     },
     {
         date: "2025-07-25",
@@ -94,6 +98,7 @@ export const conferences: Conference[] = [
             "https://speakerdeck.com/ysknsid25/typescript-shang-da-nodao",
         isBest: false,
         type: "TypeScript",
+        expense: 0,
     },
     {
         date: "2025-06-14",
@@ -108,6 +113,7 @@ export const conferences: Conference[] = [
             "https://fortee.jp/2025fp-matsuri/proposal/e436393d-c322-477d-b8cb-0e6ac8ce8cc6",
         isBest: false,
         type: "Kotlin",
+        expense: 62140,
     },
     {
         date: "2025-06-07",
@@ -120,6 +126,7 @@ export const conferences: Conference[] = [
             "https://speakerdeck.com/ysknsid25/java-dexue-bu-dai-shu-de-detaxing",
         isBest: false,
         type: "Kotlin",
+        expense: 43940,
     },
     {
         date: "2025-05-23",
@@ -133,6 +140,7 @@ export const conferences: Conference[] = [
         proposalUrl: "https://2025.tskaigi.org/talks/ysknsid25",
         isBest: false,
         type: "TypeScript",
+        expense: 55940,
     },
     {
         date: "2024-11-30",
@@ -145,6 +153,7 @@ export const conferences: Conference[] = [
             "https://speakerdeck.com/ysknsid25/gas-x-discord-bot-x-gemini-dezuo-tutasaikiyonoqing-bao-shou-ji-turu",
         isBest: false,
         type: "Google",
+        expense: 28840,
     },
     {
         date: "2024-11-16",
@@ -158,6 +167,7 @@ export const conferences: Conference[] = [
         proposalUrl: "https://kansai.tskaigi.org/talks/ysknsid25",
         isBest: true,
         type: "TypeScript",
+        expense: 1440,
     },
     {
         date: "2024-10-05",
@@ -172,6 +182,7 @@ export const conferences: Conference[] = [
             "https://fortee.jp/yapc-hakodate-2024/proposal/a91375cf-5d1c-4abf-bedf-b291c685e056",
         isBest: false,
         type: "TypeScript",
+        expense: 55980,
     },
     {
         date: "2024-09-18",
@@ -184,6 +195,7 @@ export const conferences: Conference[] = [
             "https://docs.google.com/presentation/d/1VrNm-OL5NhDmUlRvZIAL5Zpfhn_8PsFasCANEGCrZcE/edit?slide=id.p#slide=id.p",
         isBest: false,
         type: "SoftSkills",
+        expense: 1220,
     },
     {
         date: "2024-06-22",
@@ -198,6 +210,7 @@ export const conferences: Conference[] = [
             "https://fortee.jp/phpcon-fukuoka-2024/proposal/a41337a4-002e-4306-915a-06ee424054d3",
         isBest: false,
         type: "PHP",
+        expense: 44260,
     },
     {
         date: "2024-05-11",
@@ -212,6 +225,7 @@ export const conferences: Conference[] = [
             "https://fortee.jp/phpconkagawa-2024/proposal/d9f74b93-9991-4932-afaf-ada75c330094",
         isBest: false,
         type: "SoftSkills",
+        expense: 20600,
     },
     {
         date: "2024-02-11",
@@ -226,6 +240,7 @@ export const conferences: Conference[] = [
             "https://fortee.jp/phpcon-kansai2024/proposal/8daa1c68-69b1-458a-9f3a-0c9a86e7843e",
         isBest: false,
         type: "PHP",
+        expense: 840,
     },
     {
         date: "2023-11-17",
@@ -238,6 +253,7 @@ export const conferences: Conference[] = [
             "https://docs.google.com/presentation/d/1Vycv8CJg_XnX8aM3Xs04kB2JhYdFsIhZG57-iVOR4W4/edit?slide=id.p#slide=id.p",
         isBest: false,
         type: "SoftSkills",
+        expense: 0,
     },
     {
         date: "2023-06-21",
@@ -250,5 +266,6 @@ export const conferences: Conference[] = [
             "https://speakerdeck.com/toranoana/codezine-night-number-2-ruo-shou-enziniagayu-ruji-shu-henotiao-zhan-tokiyariazhan-lue-9a3918b0-a756-4e71-ac8c-0c2a7e29fb7e",
         isBest: false,
         type: "TypeScript",
+        expense: 0,
     },
 ];
