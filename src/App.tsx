@@ -495,18 +495,34 @@ function HistoryView() {
             </div>
 
             <div className="flex flex-col gap-8">
-                {years.map((year) => (
-                    <div key={year}>
-                        <h2 className="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-blue-500 pb-2">
-                            {year}
-                        </h2>
-                        <div className="flex flex-col gap-4">
-                            {groupedByYear[year].map((conf, idx) => (
-                                <HistoryItem key={idx} conf={conf} idx={idx} />
-                            ))}
+                {years.map((year) => {
+                    const totalExpense = groupedByYear[year].reduce(
+                        (sum, conf) => sum + (conf.expense || 0),
+                        0
+                    );
+                    return (
+                        <div key={year}>
+                            <h2 className="flex items-center gap-3 text-2xl font-bold text-gray-800 mb-4 border-b-2 border-blue-500 pb-2">
+                                {year}
+                                <span className="text-sm font-medium bg-gray-100 text-gray-600 px-2.5 py-0.5 rounded-full border border-gray-200">
+                                    {groupedByYear[year].length} confs
+                                </span>
+                                <span className="text-sm font-medium bg-green-100 text-green-700 px-2.5 py-0.5 rounded-full border border-green-200">
+                                    ¥{totalExpense.toLocaleString()}
+                                </span>
+                            </h2>
+                            <div className="flex flex-col gap-4">
+                                {groupedByYear[year].map((conf, idx) => (
+                                    <HistoryItem
+                                        key={idx}
+                                        conf={conf}
+                                        idx={idx}
+                                    />
+                                ))}
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    );
+                })}
             </div>
         </div>
     );
