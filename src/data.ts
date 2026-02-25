@@ -65,7 +65,7 @@ export const conferences: Conference[] = [
         name: "TSKaigi Mashup Kansai 生成AIでTSを扱うときに考えたい設計&ガードレール",
         url: "https://typescript-jpc.connpass.com/event/382128/",
         theme: "生成AIでJavaScript/TypeScriptを扱うときに設定しておきたい ESLint (plugin) ルール",
-        slidesUrl: "",
+        slidesUrl: "https://blog.inorinrinrin.com/entry/2026/02/24/194907",
         isBest: false,
         type: "TypeScript",
         expense: 580,
