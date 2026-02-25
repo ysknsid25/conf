@@ -51,7 +51,7 @@ export const conferences: Conference[] = [
         venue: "株式会社MonotaRO 本社",
         coords: [34.700629,135.494151],
         name: "Devin Meetup Osaka #1",
-        url: "https://typescript-jpc.connpass.com/event/382128/",
+        url: "https://aiau.connpass.com/event/380750/",
         theme: "Devin Review もう使った？",
         slidesUrl: "",
         isBest: false,
