@@ -49,11 +49,11 @@ export const conferences: Conference[] = [
     {
         date: "2026-02-27",
         venue: "株式会社MonotaRO 本社",
-        coords: [34.700629,135.494151],
+        coords: [34.700629, 135.494151],
         name: "Devin Meetup Osaka #1",
         url: "https://aiau.connpass.com/event/380750/",
         theme: "Devin Review もう使った？",
-        slidesUrl: "",
+        slidesUrl: "https://blog.inorinrinrin.com/entry/2026/02/27/184932",
         isBest: false,
         type: "TypeScript",
         expense: 580,
@@ -61,7 +61,7 @@ export const conferences: Conference[] = [
     {
         date: "2026-02-24",
         venue: "KINTOテクノロジーズ株式会社 Osaka Tech Lab",
-        coords: [34.702926,135.495456],
+        coords: [34.702926, 135.495456],
         name: "TSKaigi Mashup Kansai 生成AIでTSを扱うときに考えたい設計&ガードレール",
         url: "https://typescript-jpc.connpass.com/event/382128/",
         theme: "生成AIでJavaScript/TypeScriptを扱うときに設定しておきたい ESLint (plugin) ルール",
