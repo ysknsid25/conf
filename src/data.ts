@@ -49,11 +49,11 @@ export const conferences: Conference[] = [
     {
         date: "2026-05-22",
         venue: "ベルサール羽田空港",
-        coords: [35.544567,139.7624216],
+        coords: [35.544567, 139.7624216],
         name: "TSKaigi 2026",
         url: "https://tskaigi.hatenablog.com/entry/2026/03/22/185722",
         theme: "Road to contibuter of Valibot - ValibotにISBN validationを追加するまで -",
-        slidesUrl: "",
+        slidesUrl: "https://blog.inorinrinrin.com/entry/2026/05/22/140140",
         isBest: false,
         type: "TypeScript",
         expense: 29440,
