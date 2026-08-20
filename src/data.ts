@@ -7,6 +7,8 @@ export type ConferenceType =
     | "SoftSkills"
     | "Other";
 
+export type ProposalType = "CfP" | "Invited";
+
 export interface Conference {
     date: string;
     venue: string;
@@ -18,6 +20,7 @@ export interface Conference {
     proposalUrl?: string; // Add Proposal URL
     isBest: boolean;
     type: ConferenceType;
+    proposalType: ProposalType; // CfP: 公募採択 / Invited: 招待
     expense: number;
 }
 
@@ -47,6 +50,60 @@ export const conferences: Conference[] = [
     //   type: 'Other',
     // },
     {
+        date: "2026-08-07",
+        venue: "gusuku Ashibinaa OSAKA",
+        coords: [34.7062453, 135.4921609],
+        name: "Cloudflare Workers Tech Talks in Osaka #3",
+        url: "https://workers-tech.connpass.com/event/399304/",
+        theme: "Formisch・Honox・Cloudflare Workersではじめる超ミニマルなSchema駆動開発",
+        slidesUrl:
+            "https://blog.inorinrinrin.com/entry/b80576e5-1efc-2c1a-bf81-ee838b66db06",
+        isBest: false,
+        type: "TypeScript",
+        proposalType: "Invited",
+        expense: 640,
+    },
+    {
+        date: "2026-07-13",
+        venue: "フェンリル株式会社 大阪本社",
+        coords: [34.7059233, 135.4918336],
+        name: "CodeRabbit User Group Osaka #3",
+        url: "https://crug.connpass.com/event/398184/",
+        theme: "DMM.com 購入改善推進チーム におけるCodeRabbitを用いた レビューフロー改善の一例",
+        slidesUrl:
+            "https://speakerdeck.com/ysknsid25/dmm-dot-com-gou-ru-gai-shan-tui-jin-timu-niokerucoderabbitwoyong-ita-rebiyuhurogai-shan-no-li",
+        isBest: false,
+        type: "TypeScript",
+        proposalType: "Invited",
+        expense: 640,
+    },
+    {
+        date: "2026-06-26",
+        venue: "&ISLAND アンドアイランド 北浜",
+        coords: [34.692215, 135.5015791],
+        name: "GitHub After Dark Osaka #1",
+        url: "https://github.registration.goldcast.io/events/844f66e2-c0e5-4e78-8401-05c7cc662bc9",
+        theme: "GitHub ActionsでAI to Humanになるようレビューフローをコントロールする",
+        slidesUrl: "https://blog.inorinrinrin.com/entry/2026/06/26/164821",
+        isBest: false,
+        type: "TypeScript",
+        proposalType: "Invited",
+        expense: 640,
+    },
+    {
+        date: "2026-06-25",
+        venue: "株式会社SmartHR",
+        coords: [35.6661597, 139.7273756],
+        name: "TSKaigi 2026事後勉強会",
+        url: "https://smarthr.connpass.com/event/392342/",
+        theme: "Valibotを5分で**Vali**推してみる",
+        slidesUrl: "https://blog.inorinrinrin.com/entry/2026/06/25/135305",
+        isBest: false,
+        type: "TypeScript",
+        proposalType: "CfP",
+        expense: 31296,
+    },
+    {
         date: "2026-05-22",
         venue: "ベルサール羽田空港",
         coords: [35.544567, 139.7624216],
@@ -56,6 +113,7 @@ export const conferences: Conference[] = [
         slidesUrl: "https://blog.inorinrinrin.com/entry/2026/05/22/140140",
         isBest: false,
         type: "TypeScript",
+        proposalType: "CfP",
         expense: 29440,
     },
     {
@@ -68,6 +126,7 @@ export const conferences: Conference[] = [
         slidesUrl: "https://blog.inorinrinrin.com/entry/2026/02/27/184932",
         isBest: false,
         type: "TypeScript",
+        proposalType: "CfP",
         expense: 580,
     },
     {
@@ -80,6 +139,7 @@ export const conferences: Conference[] = [
         slidesUrl: "https://blog.inorinrinrin.com/entry/2026/02/24/194907",
         isBest: false,
         type: "TypeScript",
+        proposalType: "CfP",
         expense: 580,
     },
     {
@@ -93,6 +153,7 @@ export const conferences: Conference[] = [
         proposalUrl: "https://tskaigi.hatenablog.com/entry/2025/10/14/140147",
         isBest: false,
         type: "TypeScript",
+        proposalType: "CfP",
         expense: 19480,
     },
     {
@@ -107,6 +168,7 @@ export const conferences: Conference[] = [
             "https://fortee.jp/kotlin-fest-2025/proposal/e5c35932-b0ba-44f5-9da7-e0653e0c2655",
         isBest: false,
         type: "Kotlin",
+        proposalType: "CfP",
         expense: 28840,
     },
     {
@@ -121,6 +183,7 @@ export const conferences: Conference[] = [
             "https://fortee.jp/honoconf-2025/proposal/e03ef3a3-0f9f-4c1a-9b0c-e628f38b9f5c",
         isBest: true,
         type: "TypeScript",
+        proposalType: "CfP",
         expense: 29616,
     },
     {
@@ -134,6 +197,7 @@ export const conferences: Conference[] = [
             "https://speakerdeck.com/ysknsid25/typescript-shang-da-nodao",
         isBest: false,
         type: "TypeScript",
+        proposalType: "CfP",
         expense: 0,
     },
     {
@@ -149,6 +213,7 @@ export const conferences: Conference[] = [
             "https://fortee.jp/2025fp-matsuri/proposal/e436393d-c322-477d-b8cb-0e6ac8ce8cc6",
         isBest: false,
         type: "Kotlin",
+        proposalType: "CfP",
         expense: 62140,
     },
     {
@@ -162,6 +227,7 @@ export const conferences: Conference[] = [
             "https://speakerdeck.com/ysknsid25/java-dexue-bu-dai-shu-de-detaxing",
         isBest: false,
         type: "Kotlin",
+        proposalType: "CfP",
         expense: 43940,
     },
     {
@@ -176,6 +242,7 @@ export const conferences: Conference[] = [
         proposalUrl: "https://2025.tskaigi.org/talks/ysknsid25",
         isBest: false,
         type: "TypeScript",
+        proposalType: "CfP",
         expense: 55940,
     },
     {
@@ -189,6 +256,7 @@ export const conferences: Conference[] = [
             "https://speakerdeck.com/ysknsid25/gas-x-discord-bot-x-gemini-dezuo-tutasaikiyonoqing-bao-shou-ji-turu",
         isBest: false,
         type: "Google",
+        proposalType: "CfP",
         expense: 28840,
     },
     {
@@ -203,6 +271,7 @@ export const conferences: Conference[] = [
         proposalUrl: "https://kansai.tskaigi.org/talks/ysknsid25",
         isBest: true,
         type: "TypeScript",
+        proposalType: "CfP",
         expense: 1440,
     },
     {
@@ -218,6 +287,7 @@ export const conferences: Conference[] = [
             "https://fortee.jp/yapc-hakodate-2024/proposal/a91375cf-5d1c-4abf-bedf-b291c685e056",
         isBest: false,
         type: "TypeScript",
+        proposalType: "CfP",
         expense: 55980,
     },
     {
@@ -231,6 +301,7 @@ export const conferences: Conference[] = [
             "https://docs.google.com/presentation/d/1VrNm-OL5NhDmUlRvZIAL5Zpfhn_8PsFasCANEGCrZcE/edit?slide=id.p#slide=id.p",
         isBest: false,
         type: "SoftSkills",
+        proposalType: "Invited",
         expense: 1220,
     },
     {
@@ -246,6 +317,7 @@ export const conferences: Conference[] = [
             "https://fortee.jp/phpcon-fukuoka-2024/proposal/a41337a4-002e-4306-915a-06ee424054d3",
         isBest: false,
         type: "PHP",
+        proposalType: "CfP",
         expense: 44260,
     },
     {
@@ -261,6 +333,7 @@ export const conferences: Conference[] = [
             "https://fortee.jp/phpconkagawa-2024/proposal/d9f74b93-9991-4932-afaf-ada75c330094",
         isBest: false,
         type: "SoftSkills",
+        proposalType: "CfP",
         expense: 20600,
     },
     {
@@ -276,6 +349,7 @@ export const conferences: Conference[] = [
             "https://fortee.jp/phpcon-kansai2024/proposal/8daa1c68-69b1-458a-9f3a-0c9a86e7843e",
         isBest: false,
         type: "PHP",
+        proposalType: "CfP",
         expense: 840,
     },
     {
@@ -289,6 +363,7 @@ export const conferences: Conference[] = [
             "https://docs.google.com/presentation/d/1Vycv8CJg_XnX8aM3Xs04kB2JhYdFsIhZG57-iVOR4W4/edit?slide=id.p#slide=id.p",
         isBest: false,
         type: "SoftSkills",
+        proposalType: "CfP",
         expense: 0,
     },
     {
@@ -302,6 +377,7 @@ export const conferences: Conference[] = [
             "https://speakerdeck.com/toranoana/codezine-night-number-2-ruo-shou-enziniagayu-ruji-shu-henotiao-zhan-tokiyariazhan-lue-9a3918b0-a756-4e71-ac8c-0c2a7e29fb7e",
         isBest: false,
         type: "TypeScript",
+        proposalType: "Invited",
         expense: 0,
     },
 ];

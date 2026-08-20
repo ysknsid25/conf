@@ -232,6 +232,12 @@ const typeColors: { [key: string]: string } = {
     Other: "bg-gray-100 text-gray-800 border-gray-200",
 };
 
+const proposalTypeColors: { [key: string]: string } = {
+    CfP: "bg-slate-100 text-slate-700 border-slate-200",
+
+    Invited: "bg-teal-100 text-teal-800 border-teal-200",
+};
+
 function App() {
     const [mode, setMode] = useState<"map" | "history" | "about">("map");
 
@@ -339,14 +345,29 @@ function PopupCard({ group }: { group: Conference[] }) {
 
     return (
         <div className="font-sans">
-            <div className="bg-gray-50 px-4 py-3 border-b border-gray-200 flex justify-between items-center">
-                <span
-                    className={`text-xs font-semibold px-2 py-0.5 rounded border ${
-                        typeColors[conf.type] || typeColors["Other"]
-                    }`}
-                >
-                    {conf.type}
-                </span>
+            <div className="bg-gray-50 px-4 py-3 border-b border-gray-200 flex flex-wrap justify-between items-center gap-2">
+                <div className="flex flex-wrap items-center gap-1.5">
+                    <span
+                        className={`text-xs font-semibold px-2 py-0.5 rounded border ${
+                            typeColors[conf.type] || typeColors["Other"]
+                        }`}
+                    >
+                        {conf.type}
+                    </span>
+                    <span
+                        className={`text-xs font-semibold px-2 py-0.5 rounded border ${
+                            proposalTypeColors[conf.proposalType] ||
+                            proposalTypeColors["CfP"]
+                        }`}
+                    >
+                        {conf.proposalType}
+                    </span>
+                    {conf.isBest && (
+                        <span className="text-xs font-semibold px-2 py-0.5 rounded border bg-yellow-100 text-yellow-800 border-yellow-200">
+                            👑 Best Conf
+                        </span>
+                    )}
+                </div>
                 {total > 1 && (
                     <div className="flex items-center gap-2 text-xs bg-white border border-gray-200 rounded-full px-2 py-0.5 shadow-sm">
                         <button
@@ -379,11 +400,6 @@ function PopupCard({ group }: { group: Conference[] }) {
             <div className="p-4">
                 <h3 className="text-base font-bold text-gray-900 leading-snug mb-2">
                     {conf.name}
-                    {conf.isBest && (
-                        <span className="ml-2 text-xs bg-yellow-100 text-yellow-800 border border-yellow-200 px-1.5 py-0.5 rounded">
-                            Best
-                        </span>
-                    )}
                 </h3>
 
                 <div className="flex flex-col gap-1.5 mb-3 text-sm text-gray-600">
@@ -536,31 +552,39 @@ function HistoryItem({ conf, idx }: { conf: Conference; idx: number }) {
             style={{ "--stagger": idx } as React.CSSProperties}
         >
             {/* Left Column: Date & Type */}
-            <div className="sm:w-32 flex-shrink-0 flex flex-col gap-2">
+            <div className="sm:w-48 flex-shrink-0 flex flex-col gap-2">
                 <div className="text-sm font-bold text-gray-500">
                     {conf.date}
                 </div>
-                <span
-                    className={`inline-flex items-center justify-center px-2.5 py-0.5 rounded text-xs font-medium border w-fit ${
-                        typeColors[conf.type] || typeColors["Other"]
-                    }`}
-                >
-                    {conf.type}
-                </span>
-            </div>
-
-            {/* Right Column: Content */}
-            <div className="flex-1 min-w-0">
-                <div className="flex justify-between items-start mb-1">
-                    <h3 className="text-lg font-bold text-gray-900 leading-tight">
-                        {conf.name}
-                    </h3>
+                <div className="flex flex-wrap items-center gap-1.5">
+                    <span
+                        className={`inline-flex items-center justify-center px-2.5 py-0.5 rounded text-xs font-medium border w-fit ${
+                            typeColors[conf.type] || typeColors["Other"]
+                        }`}
+                    >
+                        {conf.type}
+                    </span>
+                    <span
+                        className={`inline-flex items-center justify-center px-2.5 py-0.5 rounded text-xs font-medium border w-fit ${
+                            proposalTypeColors[conf.proposalType] ||
+                            proposalTypeColors["CfP"]
+                        }`}
+                    >
+                        {conf.proposalType}
+                    </span>
                     {conf.isBest && (
-                        <span className="flex-shrink-0 ml-2 inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-yellow-100 text-yellow-800 border border-yellow-200">
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium border w-fit bg-yellow-100 text-yellow-800 border-yellow-200">
                             👑 Best Conf
                         </span>
                     )}
                 </div>
+            </div>
+
+            {/* Right Column: Content */}
+            <div className="flex-1 min-w-0">
+                <h3 className="text-lg font-bold text-gray-900 leading-tight mb-1">
+                    {conf.name}
+                </h3>
 
                 <div className="flex items-center gap-1 text-sm text-gray-500 mb-3">
                     <IconLocation className="w-3.5 h-3.5" />
