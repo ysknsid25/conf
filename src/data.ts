@@ -64,6 +64,20 @@ export const conferences: Conference[] = [
         expense: 640,
     },
     {
+        date: "2026-07-24",
+        venue: "はてな株式会社 京都本社",
+        coords: [35.0070782,135.7573604],
+        name: "TSKaigi Mashup Kansai #2",
+        url: "https://tskaigi.connpass.com/event/396865/",
+        theme: "https://tskaigi.connpass.com/event/396865/",
+        slidesUrl:
+            "https://blog.inorinrinrin.com/entry/2026/07/24/201658",
+        isBest: false,
+        type: "TypeScript",
+        proposalType: "CfP",
+        expense: 640,
+    },
+    {
         date: "2026-07-13",
         venue: "フェンリル株式会社 大阪本社",
         coords: [34.7059233, 135.4918336],
